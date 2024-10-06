@@ -1,0 +1,335 @@
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    height: 15vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh 3vw;
+    position: fixed;
+    z-index: 5;
+}
+
+.logo {
+    background-image: url("/images/logo.gif");
+    height: 100%;
+    width: 117px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.navbar {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar>a {
+    color: white;
+    text-decoration: none;
+    font-size: 4vh;
+    margin: 0px 2vw;
+}
+
+.line {
+    height: 0.5vh;
+}
+
+.hero {
+    background-image: url("/images/bg.jpeg");
+    height: 84.5vh;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+.varela-round-regular {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header {
+    font-size: 72px;
+    padding: 0px 20vw;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+.subheader {
+    font-size: 36px;
+    font-weight: bolder;
+    color: white;
+}
+
+.yellow {
+    color: #FBE063;
+}
+
+.stair {
+    width: 70vw;
+    height: 30vh;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stair-box {
+    width: 15%;
+    height: 80%;
+    /* background-color: pink; */
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    /* opacity: 2   0%; */
+}
+
+.stair-box-image {
+    width: 100%;
+    height: 80%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.stair-box-text {
+    margin-top: 10px;
+    opacity: 100%;
+}
+
+#about{
+    height: 220vh;
+}
+
+.selected {
+    color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px 0px 0px 20px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px 20px 20px 0px;
+  }
+  
+  button:hover {
+    background-color: black;
+  }
+
+  .agenda {
+    background-image: url("/images/agenda.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .leave {
+    background-image: url("/images/leave.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+  }
+  .eleven {
+    background-image: url("/images/11.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+  }
+  .pain {
+    background-image: url("/images/pain.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+  }
+  .trivia {
+    background-image: url("/images//trivia.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+  }
+
+  .topp {
+    background-image: url("/images/Untitled.png");
+    height: 70vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .toppp {
+    background-color: #0056b3;
+    color: white;
+    width: 30vw;
+    margin-top: 17vh;
+    margin-left: 15vw;
+    padding: 3vw;
+    position: absolute;
+  }
+
+  .toppp>h2 {
+    font-size: 34px;
+  }
+  .toppp>p {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .black {
+    height: 7vh;
+    width: 100vw;
+    background-color: black;
+  }
+
+  .lower {
+    /* background-color: purple; */
+    height: 50vh;
+    padding: 5vh 10vw 5vh 10vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .paragraph {
+    width: 50%;
+  }
+
+  .paragraph>h1 {
+    font-size: 55px;
+  }
+
+  .paragraph>p{
+    margin-top: 20px;
+    font-size: 23px;
+  }
+
+  .image_lower {
+    background-image: url("/images/123.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    width: 30vw;
+  }
+
+  .issue_heading{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .issues {
+    padding: 0px 10vw 0 10vw;
+  }
+
+  .issues_img{
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 10px;
+  }
+
+  .issue{
+    flex: 1 1 calc(33.333% - 20px); /* 3 items per row with spacing */
+    /* background-color: #4CAF50; */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 5px 0;
+    height: 40vh;
+  }
+  .issue>h2 {
+    color: black;
+}
+.issue>img{
+    width: 80%;
+    height: 80%;
+}
+.issue>p{
+    color: black;
+  }

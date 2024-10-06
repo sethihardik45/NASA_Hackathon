@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Quiz</title>
+    <link rel="stylesheet" href="assessment_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"></div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="learning.html">Learning</a>
+            <a href="assessment.html"  class="selected" style="color: yellow;">Assessment</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="community.html">Community</a>
+        </div>
+    </div>
+    <div class="categories">
+        <a href="basic_quiz.html" class="category">BASIC</a>
+        <a href="intermediate_quiz.html" class="category" style="color: yellow;">INTERMEDIATE</a>
+        <a href="advanced_quiz.html" class="category">ADVANCED</a>
+    </div>
+
+    <div class="quiz-container">
+        <h1>INTERMEDIATE QUIZ</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        (function() {
+            const quizData = {
+                intermediate: [
+                {
+    question: "1. Which of the following is a key feature of sustainable urban development?",
+    answers: {
+        a: "Increasing urban land area",
+        b: "Preserving green spaces",
+        c: "Encouraging suburban sprawl",
+        d: "Maximizing vehicle usage"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "2. What is a major challenge faced by cities in achieving SDG 11?",
+    answers: {
+        a: "Increased public transportation options",
+        b: "Urban migration and population growth",
+        c: "Improved waste management systems",
+        d: "Access to affordable housing"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "3. Which aspect of urban life is often improved by integrating nature into city planning?",
+    answers: {
+        a: "Air quality",
+        b: "Traffic congestion",
+        c: "Building height restrictions",
+        d: "Economic disparity"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "4. What role do public spaces play in sustainable cities?",
+    answers: {
+        a: "They contribute to urban heat",
+        b: "They increase social inequality",
+        c: "They promote community interaction and well-being",
+        d: "They limit accessibility"
+    },
+    correctAnswer: "c"
+},
+{
+    question: "5. What is one of the targets set by the United Nations for SDG 11 by 2030?",
+    answers: {
+        a: "Ensure that all cities are carbon neutral",
+        b: "Provide universal access to safe, affordable, and sustainable transport systems",
+        c: "Eliminate all forms of pollution in cities",
+        d: "Achieve zero waste in urban areas"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "6. Which of the following strategies can help improve urban resilience?",
+    answers: {
+        a: "Increasing dependency on fossil fuels",
+        b: "Investing in disaster risk reduction measures",
+        c: "Encouraging informal settlements",
+        d: "Restricting green building practices"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "7. In terms of urban mobility, what is the significance of non-motorized transport?",
+    answers: {
+        a: "It contributes to air pollution",
+        b: "It is less space-efficient than cars",
+        c: "It promotes health and reduces traffic congestion",
+        d: "It requires more infrastructure investment"
+    },
+    correctAnswer: "c"
+},
+{
+    question: "8. Which demographic factor can significantly impact urban planning?",
+    answers: {
+        a: "Age distribution",
+        b: "Access to technology",
+        c: "Urban heat islands",
+        d: "Greenhouse gas emissions"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "9. What is the purpose of urban regeneration?",
+    answers: {
+        a: "To develop new urban areas",
+        b: "To restore and revitalize deteriorating urban spaces",
+        c: "To increase population density",
+        d: "To promote suburban living"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "10. How can cities promote social inclusion according to SDG 11?",
+    answers: {
+        a: "By segregating communities",
+        b: "By ensuring equal access to urban services",
+        c: "By limiting affordable housing options",
+        d: "By increasing urban rents"
+    },
+    correctAnswer: "b"
+}
+
+                    // Add the other 8 questions here...
+                ]
+            };
+
+            function buildQuiz() {
+                const output = [];
+                quizData.intermediate.forEach((currentQuestion, questionNumber) => {
+                    const answers = [];
+                    for (const letter in currentQuestion.answers) {
+                        answers.push(
+                            `<label>
+                               <input type="radio" name="question${questionNumber}" value="${letter}">
+                                ${letter} :
+                                ${currentQuestion.answers[letter]}
+                             </label>`
+                        );
+                    }
+                    output.push(
+                        `<div class="question">${currentQuestion.question}</div>
+                        <div class="answers">${answers.join('')}</div>`
+                    );
+                });
+
+                document.getElementById('quiz').innerHTML = output.join('');
+            }
+
+            function showResults() {
+                const answerContainers = document.querySelectorAll('.answers');
+                let numCorrect = 0;
+
+                quizData.intermediate.forEach((currentQuestion, questionNumber) => {
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+                        answerContainers[questionNumber].style.color = 'green';
+                    } else {
+                        answerContainers[questionNumber].style.color = 'red';
+                    }
+                });
+
+                document.getElementById('results').innerHTML = `You got ${numCorrect} out of ${quizData.intermediate.length} correct!`;
+            }
+
+            document.getElementById('submit').addEventListener('click', showResults);
+            buildQuiz();
+        })();
+    </script>
+    <footer style="background-color: rgba(0,0,0,0.9); color: white; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="font-size: 28px; margin: 10px 0; font-family: 'Varela Round', sans-serif;">Sustainable Development Goal 11</h2>
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Goal 11 aims to make cities and human settlements inclusive, safe, resilient, and sustainable. Urbanization is a key driver of economic growth, but it also brings challenges such as pollution, waste management, and insufficient infrastructure. To achieve SDG 11, we must:</p>
+            
+            <ul style="list-style: none; padding: 0; text-align: left; display: inline-block; margin: 20px 0;">
+                <li style="margin: 5px 0;">✅ Ensure access to safe and affordable housing for all.</li>
+                <li style="margin: 5px 0;">✅ Invest in sustainable public transport systems.</li>
+                <li style="margin: 5px 0;">✅ Enhance inclusive urban planning and management.</li>
+                <li style="margin: 5px 0;">✅ Protect and preserve natural heritage and green spaces.</li>
+                <li style="margin: 5px 0;">✅ Reduce the environmental impact of cities.</li>
+            </ul>
+    
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Join us in working towards more sustainable, inclusive, and resilient cities and communities for future generations.</p>
+    
+            <div style="margin-top: 20px;">
+                <a href="https://www.un.org/sustainabledevelopment/cities/" style="color: #1ABC9C; text-decoration: none; font-weight: bold;">Learn more about SDG 11</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

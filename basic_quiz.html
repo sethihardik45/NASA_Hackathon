@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Quiz</title>
+    <link rel="stylesheet" href="assessment_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"></div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="learning.html">Learning</a>
+            <a href="assessment.html"  class="selected" style="color: yellow;">Assessment</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="community.html">Community</a>
+        </div>
+    </div>
+    <div class="categories">
+        <a href="basic_quiz.html" class="category" style="color: yellow;">BASIC</a>
+        <a href="intermediate_quiz.html" class="category">INTERMEDIATE</a>
+        <a href="advanced_quiz.html" class="category">ADVANCED</a>
+    </div>
+
+    <div class="quiz-container">
+        <h1>BASIC QUIZ</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        (function() {
+            const quizData = {
+                basic: [
+                {
+    question: "1. What does SDG 11 focus on?",
+    answers: {
+        a: "Sustainable Cities and Communities",
+        b: "Life on Land",
+        c: "Decent Work and Economic Growth",
+        d: "Zero Hunger"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "2. What is a major goal of SDG 11?",
+    answers: {
+        a: "Ensure access to safe and affordable housing",
+        b: "Promote biodiversity",
+        c: "Reduce poverty",
+        d: "Increase industrialization"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "3. Which aspect is crucial for sustainable urban planning?",
+    answers: {
+        a: "Public transportation",
+        b: "Individual car ownership",
+        c: "Urban sprawl",
+        d: "Road expansion"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "4. What is meant by 'resilient cities' in the context of SDG 11?",
+    answers: {
+        a: "Cities that can withstand and recover from disasters",
+        b: "Cities with a high population density",
+        c: "Cities that only focus on economic growth",
+        d: "Cities without public services"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "5. Which of the following contributes to urban air pollution?",
+    answers: {
+        a: "Renewable energy sources",
+        b: "Traffic emissions",
+        c: "Public parks",
+        d: "Urban agriculture"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "6. What percentage of the world’s population is expected to live in urban areas by 2050?",
+    answers: {
+        a: "50%",
+        b: "66%",
+        c: "75%",
+        d: "80%"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "7. What is one of the targets for improving urban slum conditions?",
+    answers: {
+        a: "Eliminate slums by 2025",
+        b: "Ensure access to safe and affordable housing",
+        c: "Increase urban poverty",
+        d: "Promote informal settlements"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "8. Which initiative helps promote sustainable cities?",
+    answers: {
+        a: "Green building programs",
+        b: "Increase in fossil fuel usage",
+        c: "Deforestation",
+        d: "Urban decay"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "9. Which organization is involved in the global monitoring of SDG 11?",
+    answers: {
+        a: "UN Habitat",
+        b: "World Bank",
+        c: "WHO",
+        d: "UNICEF"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "10. What does sustainable transport aim to achieve?",
+    answers: {
+        a: "Increase traffic congestion",
+        b: "Reduce greenhouse gas emissions",
+        c: "Encourage private car use",
+        d: "Promote fossil fuel dependency"
+    },
+    correctAnswer: "b"
+}
+
+                    // Add the other 8 questions here...
+                ]
+            };
+
+            function buildQuiz() {
+                const output = [];
+                quizData.basic.forEach((currentQuestion, questionNumber) => {
+                    const answers = [];
+                    for (const letter in currentQuestion.answers) {
+                        answers.push(
+                            `<label>
+                               <input type="radio" name="question${questionNumber}" value="${letter}">
+                                ${letter} :
+                                ${currentQuestion.answers[letter]}
+                             </label>`
+                        );
+                    }
+                    output.push(
+                        `<div class="question">${currentQuestion.question}</div>
+                        <div class="answers">${answers.join('')}</div>`
+                    );
+                });
+
+                document.getElementById('quiz').innerHTML = output.join('');
+            }
+
+            function showResults() {
+                const answerContainers = document.querySelectorAll('.answers');
+                let numCorrect = 0;
+
+                quizData.basic.forEach((currentQuestion, questionNumber) => {
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+                        answerContainers[questionNumber].style.color = 'green';
+                    } else {
+                        answerContainers[questionNumber].style.color = 'red';
+                    }
+                });
+
+                document.getElementById('results').innerHTML = `You got ${numCorrect} out of ${quizData.basic.length} correct!`;
+            }
+
+            document.getElementById('submit').addEventListener('click', showResults);
+            buildQuiz();
+        })();
+    </script>
+    <footer style="background-color: rgba(0,0,0,0.9); color: white; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="font-size: 28px; margin: 10px 0; font-family: 'Varela Round', sans-serif;">Sustainable Development Goal 11</h2>
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Goal 11 aims to make cities and human settlements inclusive, safe, resilient, and sustainable. Urbanization is a key driver of economic growth, but it also brings challenges such as pollution, waste management, and insufficient infrastructure. To achieve SDG 11, we must:</p>
+            
+            <ul style="list-style: none; padding: 0; text-align: left; display: inline-block; margin: 20px 0;">
+                <li style="margin: 5px 0;">✅ Ensure access to safe and affordable housing for all.</li>
+                <li style="margin: 5px 0;">✅ Invest in sustainable public transport systems.</li>
+                <li style="margin: 5px 0;">✅ Enhance inclusive urban planning and management.</li>
+                <li style="margin: 5px 0;">✅ Protect and preserve natural heritage and green spaces.</li>
+                <li style="margin: 5px 0;">✅ Reduce the environmental impact of cities.</li>
+            </ul>
+    
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Join us in working towards more sustainable, inclusive, and resilient cities and communities for future generations.</p>
+    
+            <div style="margin-top: 20px;">
+                <a href="https://www.un.org/sustainabledevelopment/cities/" style="color: #1ABC9C; text-decoration: none; font-weight: bold;">Learn more about SDG 11</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

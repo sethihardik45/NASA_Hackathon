@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Varela Round', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("/images/bgg.webp");
+            overflow-x: hidden;
+        }
+        
+        .nav {
+    height: 15vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh 3vw;
+    z-index: 5;
+}
+
+.logo {
+    background-image: url("/images/logo.gif");
+    height: 100%;
+    width: 117px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.navbar {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar>a {
+    color: white;
+    text-decoration: none;
+    font-size: 4vh;
+    margin: 0px 2vw;
+}
+
+        
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+            color: white;
+            background-color: black;
+            width: fit-content;
+            margin: auto;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 13px;
+        }
+
+        /* Blog Section */
+        #blogs-container, #blog-form-container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        #blogs-list {
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .blog-post h3 {
+            margin: 0;
+            font-size: 24px;
+            color: black;
+        }
+
+        .blog-post p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: black;
+        }
+
+        /* Blog Submission Form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #34495E;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form button {
+            padding: 12px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: grey;
+        }
+
+        /* Animations */
+        .blog-post {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="logo"></div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="learning.html">Learning</a>
+            <a href="basic_quiz.html">Assessment</a>
+            <a href="blogs.html" style="color: yellow;">Blogs</a>
+            <a href="community.html">Community</a>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <h1 class="page-title">Blogs</h1>
+
+    <!-- Blog Section -->
+    <div id="blogs-container">
+        <h2>Read Our Latest Blogs</h2>
+        <div id="blogs-list">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Blog Submission Form -->
+    <div id="blog-form-container">
+        <h2>Share Your Thoughts</h2>
+        <form id="blog-form">
+            <label for="title">Blog Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter blog title" required>
+
+            <label for="content">Blog Content</label>
+            <textarea id="content" name="content" placeholder="Write your blog here..." rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer style="background-color: rgba(0,0,0,0.9); color: white; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="font-size: 28px; margin: 10px 0; font-family: 'Varela Round', sans-serif;">Sustainable Development Goal 11</h2>
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Goal 11 aims to make cities and human settlements inclusive, safe, resilient, and sustainable. Urbanization is a key driver of economic growth, but it also brings challenges such as pollution, waste management, and insufficient infrastructure. To achieve SDG 11, we must:</p>
+            
+            <ul style="list-style: none; padding: 0; text-align: left; display: inline-block; margin: 20px 0;">
+                <li style="margin: 5px 0;">✅ Ensure access to safe and affordable housing for all.</li>
+                <li style="margin: 5px 0;">✅ Invest in sustainable public transport systems.</li>
+                <li style="margin: 5px 0;">✅ Enhance inclusive urban planning and management.</li>
+                <li style="margin: 5px 0;">✅ Protect and preserve natural heritage and green spaces.</li>
+                <li style="margin: 5px 0;">✅ Reduce the environmental impact of cities.</li>
+            </ul>
+    
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Join us in working towards more sustainable, inclusive, and resilient cities and communities for future generations.</p>
+    
+            <div style="margin-top: 20px;">
+                <a href="https://www.un.org/sustainabledevelopment/cities/" style="color: #1ABC9C; text-decoration: none; font-weight: bold;">Learn more about SDG 11</a>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Array to hold blog posts temporarily (with 2 pre-feed blogs about SDG 11)
+        let blogs = [
+            {
+                title: "Understanding SDG 11: Sustainable Cities and Communities",
+                content: "Sustainable Development Goal 11 (SDG 11), part of the United Nations' 2030 Agenda, aims to make cities and human settlements inclusive, safe, resilient, and sustainable. As urban populations continue to grow—expected to reach two-thirds of the global population by 2050—cities are becoming increasingly central to the challenges and solutions of sustainable development. SDG 11 acknowledges that well-planned and managed cities can be engines of innovation, productivity, and economic growth, while poorly planned urbanization can lead to environmental degradation, inequality, and social issues."
+            },
+            {
+                title: "Why Green Spaces Matter in Urban Areas",
+                content: "Green spaces, such as parks, gardens, urban forests, and natural reserves, are vital components of urban environments. As cities grow and develop, the need to integrate nature into these bustling areas becomes increasingly important. Green spaces contribute to the quality of life in cities and support many aspects of sustainable urban living. 1. Environmental Benefits Green spaces play a crucial role in mitigating the environmental impacts of urbanization."
+            }
+        ];
+
+        // Function to display blogs on the page
+        function displayBlogs() {
+            const blogsList = document.getElementById('blogs-list');
+            blogsList.innerHTML = ''; // Clear existing content before rendering new blogs
+
+            blogs.forEach((blog, index) => {
+                const blogDiv = document.createElement('div');
+                blogDiv.classList.add('blog-post');
+                blogDiv.innerHTML = `
+                    <h3>${blog.title}</h3>
+                    <p>${blog.content}</p>
+                `;
+                blogsList.appendChild(blogDiv);
+            });
+        }
+
+        // Event listener to handle blog form submission
+        document.getElementById('blog-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+
+            // Add new blog to the blogs array
+            blogs.push({ title, content });
+
+            // Display updated list of blogs
+            displayBlogs();
+
+            // Clear the form after submission
+            document.getElementById('blog-form').reset();
+        });
+
+        // Initial call to display the pre-feed blogs
+        displayBlogs();
+    </script>
+</body>
+</html>

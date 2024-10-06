@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz</title>
+    <link rel="stylesheet" href="assessment_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"></div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="learning.html">Learning</a>
+            <a href="assessment.html"  class="selected" style="color: yellow;">Assessment</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="community.html">Community</a>
+        </div>
+    </div>
+    <div class="categories">
+        <a href="basic_quiz.html" class="category">BASIC</a>
+        <a href="intermediate_quiz.html" class="category">INTERMEDIATE</a>
+        <a href="advanced_quiz.html" class="category" style="color: yellow;">ADVANCED</a>
+    </div>
+
+    <div class="quiz-container">
+        <h1>ADVANCED QUIZ</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        (function() {
+            const quizData = {
+                advanced: [
+                {
+    question: "1. What is the primary indicator used to measure urbanization under SDG 11?",
+    answers: {
+        a: "Urban population growth rate",
+        b: "Percentage of the population living in urban areas",
+        c: "Number of cities with sustainable transport systems",
+        d: "Total urban land area"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "2. Which of the following urban planning concepts emphasizes mixed-use development and walkability?",
+    answers: {
+        a: "Zoning",
+        b: "Smart Growth",
+        c: "Urban Sprawl",
+        d: "New Urbanism"
+    },
+    correctAnswer: "d"
+},
+{
+    question: "3. In terms of urban governance, what does 'participatory planning' refer to?",
+    answers: {
+        a: "Involving citizens in decision-making processes",
+        b: "Restricting public input to expert opinions",
+        c: "Implementing top-down decision-making",
+        d: "Focusing solely on economic outcomes"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "4. What is the concept of 'the 15-minute city' aimed at achieving?",
+    answers: {
+        a: "Reducing urban population density",
+        b: "Ensuring all essential services are within a 15-minute walk or bike ride",
+        c: "Promoting long-distance commuting",
+        d: "Increasing reliance on automobiles"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "5. Which organization has developed the Urban Sustainability Framework to help cities measure and improve sustainability?",
+    answers: {
+        a: "World Bank",
+        b: "UN-Habitat",
+        c: "International Monetary Fund",
+        d: "Global Environment Facility"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "6. What is a significant consequence of urban heat islands in cities?",
+    answers: {
+        a: "Decreased biodiversity",
+        b: "Improved air quality",
+        c: "Reduced energy consumption",
+        d: "Enhanced public health"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "7. What type of financing mechanism is often used to support sustainable urban infrastructure projects?",
+    answers: {
+        a: "Public-private partnerships",
+        b: "Microfinance",
+        c: "Crowdfunding",
+        d: "Foreign direct investment"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "8. In the context of SDG 11, what does the term 'smart cities' refer to?",
+    answers: {
+        a: "Cities with high levels of technology and innovation",
+        b: "Cities with low population densities",
+        c: "Cities that prioritize historical preservation",
+        d: "Cities with no digital infrastructure"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "9. Which of the following is a major challenge in measuring progress towards SDG 11?",
+    answers: {
+        a: "Lack of urban data disaggregation",
+        b: "Excessive funding for urban projects",
+        c: "Overabundance of urban planning tools",
+        d: "Uniform population growth"
+    },
+    correctAnswer: "a"
+},
+{
+    question: "10. How does urban density affect the provision of public services in cities?",
+    answers: {
+        a: "Higher density generally decreases the cost of service provision",
+        b: "Lower density improves service delivery efficiency",
+        c: "Density has no impact on public services",
+        d: "Higher density always leads to poorer service delivery"
+    },
+    correctAnswer: "a"
+}
+
+                    // Add the other 8 questions here...
+                ]
+            };
+
+            function buildQuiz() {
+                const output = [];
+                quizData.advanced.forEach((currentQuestion, questionNumber) => {
+                    const answers = [];
+                    for (const letter in currentQuestion.answers) {
+                        answers.push(
+                            `<label>
+                               <input type="radio" name="question${questionNumber}" value="${letter}">
+                                ${letter} :
+                                ${currentQuestion.answers[letter]}
+                             </label>`
+                        );
+                    }
+                    output.push(
+                        `<div class="question">${currentQuestion.question}</div>
+                        <div class="answers">${answers.join('')}</div>`
+                    );
+                });
+
+                document.getElementById('quiz').innerHTML = output.join('');
+            }
+
+            function showResults() {
+                const answerContainers = document.querySelectorAll('.answers');
+                let numCorrect = 0;
+
+                quizData.advanced.forEach((currentQuestion, questionNumber) => {
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+                        answerContainers[questionNumber].style.color = 'green';
+                    } else {
+                        answerContainers[questionNumber].style.color = 'red';
+                    }
+                });
+
+                document.getElementById('results').innerHTML = `You got ${numCorrect} out of ${quizData.advanced.length} correct!`;
+            }
+
+            document.getElementById('submit').addEventListener('click', showResults);
+            buildQuiz();
+        })();
+    </script>
+    <footer style="background-color: rgba(0,0,0,0.9); color: white; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="font-size: 28px; margin: 10px 0; font-family: 'Varela Round', sans-serif;">Sustainable Development Goal 11</h2>
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Goal 11 aims to make cities and human settlements inclusive, safe, resilient, and sustainable. Urbanization is a key driver of economic growth, but it also brings challenges such as pollution, waste management, and insufficient infrastructure. To achieve SDG 11, we must:</p>
+            
+            <ul style="list-style: none; padding: 0; text-align: left; display: inline-block; margin: 20px 0;">
+                <li style="margin: 5px 0;">✅ Ensure access to safe and affordable housing for all.</li>
+                <li style="margin: 5px 0;">✅ Invest in sustainable public transport systems.</li>
+                <li style="margin: 5px 0;">✅ Enhance inclusive urban planning and management.</li>
+                <li style="margin: 5px 0;">✅ Protect and preserve natural heritage and green spaces.</li>
+                <li style="margin: 5px 0;">✅ Reduce the environmental impact of cities.</li>
+            </ul>
+    
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Join us in working towards more sustainable, inclusive, and resilient cities and communities for future generations.</p>
+    
+            <div style="margin-top: 20px;">
+                <a href="https://www.un.org/sustainabledevelopment/cities/" style="color: #1ABC9C; text-decoration: none; font-weight: bold;">Learn more about SDG 11</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

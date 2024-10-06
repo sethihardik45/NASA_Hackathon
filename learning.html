@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Page</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+.nav {
+    height: 15vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh 3vw;
+    z-index: 5;
+}
+
+.logo {
+    background-image: url("/images/logo.gif");
+    height: 100%;
+    width: 117px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.navbar {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar>a {
+    color: white;
+    text-decoration: none;
+    font-size: 4vh;
+    margin: 0px 2vw;
+}
+
+        #test-yourself {
+            float: right;
+            background-color: #ffd700;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .learning {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+        }
+
+        .progress-tracker {
+            margin-bottom: 20px;
+        }
+
+        .progress-tracker button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+        }
+
+        #search-input {
+            padding: 10px;
+            width: 60%;
+            margin-left: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .course {
+            display: flex;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .course img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .course-info {
+            flex-grow: 1;
+        }
+
+        .course-info h2 {
+            font-size: 1.5em;
+            color: #34495e;
+        }
+
+        .course-info p {
+            margin: 5px 0;
+        }
+
+        .course-info a {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"></div>
+        <div class="navbar">
+            <a href="index.html"><span class="selected">Home</span></a>
+            <a href="#about">About</a>
+            <a href="learning.html" style="color: yellow;">Learning</a>
+            <a href="basic_quiz.html"  class="selected">Assessment</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="community.html">Community</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="learning">
+            <h1>My Learning</h1>
+            <div class="progress-tracker">
+                <button id="in-progress-btn">In Progress</button>
+                <button id="completed-btn">Completed</button>
+                <input type="search" placeholder="What Would You Like To Learn Today?" id="search-input">
+            </div>
+
+            <div id="courses">
+                <div class="course">
+                    <img src="/images/1aa1.jpg" alt="Course Image">
+                    <div class="course-info">
+                        <p>Offered by: World Bank Group</p>
+                        <h2>Hydropower Projects</h2>
+                        <a href="https://www.unsdglearn.org/courses/introduction-to-environmental-flows-in-hydropower-projects/">Visit Course Page</a>
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/images/1aa2.jpg" alt="Course Image">
+                    <div class="course-info">
+                        <p>Offered by: Tsinghua University</p>
+                        <h2>Cities and Climate Change</h2>
+                        <a href="https://www.unsdglearn.org/courses/cities-and-climate-change/">Visit Course Page</a>
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/images/1aa3.jpg" alt="Course Image">
+                    <div class="course-info">
+                        <p>Offered by: UN Economic Commission for Latin America</p>
+                        <h2>Green Building</h2>
+                        <a href="https://www.unsdglearn.org/courses/green-building-and-sustainable-development/">Visit Course Page</a>
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/images/1aa4.jpg" alt="Course Image">
+                    <div class="course-info">
+                        <p>Offered by: World Bank Group</p>
+                        <h2>Disaster Assessment Methodology</h2>
+                        <a href="https://www.unsdglearn.org/courses/disaster-assessment-methodology/">Visit Course Page</a>
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/images/1aa5.jpg" alt="Course Image">
+                    <div class="course-info">
+                        <p>Offered by: Tsinghua University</p>
+                        <h2>Cities and Marine Plastic Pollution: Building a Circular Economy</h2>
+                        <a href="https://www.unsdglearn.org/courses/cities-and-marine-plastic-pollution-building-a-circular-economy/">Visit Course Page</a>
+                    </div>
+                </div>
+                <div class="course">
+                    <img src="/images/1aa6.jpg" alt="Course Image">
+                    <div class="course-info">
+                        <p>Offered by: UN Economic Commission for Latin America</p>
+                        <h2>Implementing the Child Friendly Cities Initiative</h2>
+                        <a href="https://www.unsdglearn.org/courses/implementing-the-child-friendly-cities-initiative-cfci-basics/">Visit Course Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('in-progress-btn').addEventListener('click', () => {
+            alert('In Progress Courses');
+        });
+
+        document.getElementById('completed-btn').addEventListener('click', () => {
+            alert('Completed Courses');
+        });
+    </script>
+    <footer style="background-color: rgba(0,0,0,0.9); color: white; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="font-size: 28px; margin: 10px 0; font-family: 'Varela Round', sans-serif;">Sustainable Development Goal 11</h2>
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Goal 11 aims to make cities and human settlements inclusive, safe, resilient, and sustainable. Urbanization is a key driver of economic growth, but it also brings challenges such as pollution, waste management, and insufficient infrastructure. To achieve SDG 11, we must:</p>
+            
+            <ul style="list-style: none; padding: 0; text-align: left; display: inline-block; margin: 20px 0;">
+                <li style="margin: 5px 0;">✅ Ensure access to safe and affordable housing for all.</li>
+                <li style="margin: 5px 0;">✅ Invest in sustainable public transport systems.</li>
+                <li style="margin: 5px 0;">✅ Enhance inclusive urban planning and management.</li>
+                <li style="margin: 5px 0;">✅ Protect and preserve natural heritage and green spaces.</li>
+                <li style="margin: 5px 0;">✅ Reduce the environmental impact of cities.</li>
+            </ul>
+    
+            <p style="font-size: 16px; line-height: 1.6; margin: 10px 0;">Join us in working towards more sustainable, inclusive, and resilient cities and communities for future generations.</p>
+    
+            <div style="margin-top: 20px;">
+                <a href="https://www.un.org/sustainabledevelopment/cities/" style="color: #1ABC9C; text-decoration: none; font-weight: bold;">Learn more about SDG 11</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
