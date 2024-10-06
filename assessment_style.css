@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("/images/back.webp");
+    background-image: url("back.webp");
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -100,7 +100,7 @@ html {
 }
 
 .logo {
-    background-image: url("/images/logo.gif");
+    background-image: url("logo.gif");
     height: 100%;
     width: 117px;
     background-position: center;
@@ -171,7 +171,7 @@ html {
 }
 
 .logo {
-    background-image: url("/images/logo.gif");
+    background-image: url("logo.gif");
     height: 100%;
     width: 117px;
     background-position: center;
@@ -196,7 +196,7 @@ html {
 }
 
 .hero {
-    background-image: url("/images/bg.jpeg");
+    background-image: url("bg.jpeg");
     height: 84.5vh;
     background-position: center;
     background-repeat: no-repeat; 
